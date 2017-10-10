@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blog Post API</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Blog Posts</h2>
+                <form id="blog-entry-form">
+                    <label for="blog-entry">Add a blog post</label>
+                    <input type="text" name="blog-entry" id="new-item" placeholder="Enter text here...">
+                    <button type="submit">Add post</button>
+                </form>
+
+                <ul class="blog-list js-blog-list">
+
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
