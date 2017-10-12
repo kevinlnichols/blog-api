@@ -3,7 +3,7 @@ var blogTemplate = (
         '<p><span class="blog-item js-blog-item-name"></span></p>' +
         '<div class="blog-item-controls">' +
             '<button class="js-blog-item-toggle">' +
-                '<span class="button-label">check</span>' +
+                '<span class="button-label">update</span>' +
             '</button>' +
             '<button class="js-blog-item-delete">' +
                 '<span class="button-label">delete</span>' +
@@ -15,7 +15,7 @@ var blogTemplate = (
 var BLOG_URL = '/blog-posts';
 
 function displayBlogPosts () {
-    $getJSON(BLOG_URL, function(blogPosts) {
+    $.getJSON(BLOG_URL, function(blogPosts) {
         var blogElement = blogPosts.map(function(blogPosts) {
             var element = $(blogTemplate);
             element.attr('id', post.id);
@@ -72,8 +72,9 @@ function updateBlogPost(post) {
     $('#blog-entry-form').submit(function(e) {
     e.preventDefault();
     addBlogPost({
-        title: $(e.currentTarget).find('#new-item').val(),
-        checked: false
+        title: $(e.currentTarget).find('#title').val(),
+        content:  $(e.currentTarget).find('#content').val(),
+        author: $(e.currentTarget).find('#author').val(),
     });
     });
 }
