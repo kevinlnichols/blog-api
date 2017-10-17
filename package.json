@@ -1,10 +1,9 @@
 {
   "name": "blog-api",
   "version": "1.0.0",
-  "description": "",
   "main": "blogPostRouter.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon server.js"
   },
   "author": "",
@@ -14,5 +13,22 @@
     "express": "^4.16.2",
     "morgan": "^1.9.0",
     "uuid": "^3.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinlnichols/blog-api.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kevinlnichols/blog-api/issues"
+  },
+  "homepage": "https://github.com/kevinlnichols/blog-api#readme",
+  "description": ""
 }
