@@ -32,7 +32,7 @@ describe('Blog', function() {
             });
     });
     it('should add a blog entry on POST', function() {
-        const newItem = {content: 'blah blah', author: 'Kevin', title: 'blog title', publishDate: };
+        const newItem = {content: 'blah blah', author: 'Kevin', title: 'blog title', publishDate: '2'};
         return chai.request(app)
             .post('/blog-posts')
             .send(newItem)
@@ -46,7 +46,7 @@ describe('Blog', function() {
             });
     });
     it('should update blog on PUT', function() {
-        const updateData = {content: 'blah', author: 'Finn', title: 'frog title', publishDate: };
+        const updateData = {content: 'blah', author: 'Finn', title: 'frog title', publishDate: '2'};
         return chai.request(app)
             .get('/blog-posts')
             .then(function(res) {
