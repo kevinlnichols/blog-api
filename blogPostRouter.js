@@ -6,7 +6,7 @@ const jsonParser = bodyParser.json();
 mongoose.Promise = global.Promise;
 const {BlogPosts} = require('./models');
 
-BlogPosts.create('This is a sample title', 'This is sample content', 'Sample author', );
+BlogPosts.create('This is a sample title', 'This is sample content', 'Sample author', '');
 
 router.get('/', (req, res) => {
     BlogPosts
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', jsonParser (req, res) => {
+router.post('/', jsonParser, (req, res) => {
     const requiredFields = ['title', 'content', 'author', 'publishDate'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
@@ -52,7 +52,7 @@ router.post('/', jsonParser (req, res) => {
             author: req.body.author, 
             publishDate: req.body.publishDate})
         .then(
-            blogPosts => res.status(201).json(blogPosts.apiRepr())
+            blogPosts => res.status(201).json(blogPosts.apiRepr()))
         .catch(err => {
             console.error(err);
             res.status(500).json({message: 'Internal server error'});
@@ -62,7 +62,7 @@ router.post('/', jsonParser (req, res) => {
 router.delete('/:id', (req, res) => {
     BlogPosts
         .findByIdAndRemove(req.params.id)
-        
+
         .then(blogPosts => res.status(204).end())
         .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
