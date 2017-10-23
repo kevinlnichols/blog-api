@@ -4,7 +4,7 @@
   "main": "blogPostRouter.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "body-parser": "^1.18.2",
     "chai-http": "^3.0.0",
     "express": "^4.16.2",
+    "mongoose": "^4.12.4",
     "morgan": "^1.9.0",
     "uuid": "^3.1.0"
   },
