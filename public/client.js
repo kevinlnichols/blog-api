@@ -89,6 +89,7 @@ function handleBlogDelete() {
 
 
   $(function() {
+    addBlogPost();
     displayBlogPosts();
     handleBlogPostAdd();
     handleBlogDelete();
