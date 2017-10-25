@@ -75,6 +75,7 @@ function updateBlogPost(post) {
         title: $(e.currentTarget).find('#title').val(),
         content:  $(e.currentTarget).find('#content').val(),
         author: $(e.currentTarget).find('#author').val(),
+        publishDate: $(e.currentTarget).find('publishDate').val()
     });
     });
 }
