@@ -49,8 +49,7 @@ router.post('/', jsonParser, (req, res) => {
         .create({
             title: req.body.title, 
             content: req.body.content, 
-            author: req.body.author, 
-            publishDate: req.body.publishDate})
+            author: req.body.author})
         .then(
             blogPosts => res.status(201).json(blogPosts.apiRepr()))
         .catch(err => {
